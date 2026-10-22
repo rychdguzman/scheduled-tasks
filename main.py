@@ -26,7 +26,7 @@ birthday_celebrant = [bday_celebrant for bday_celebrant in birthday_list
 
 with smtplib.SMTP('smtp.gmail.com', 587) as connection:
     connection.starttls()
-    connection.login(user=EMAIL, password=PASSWORD)
+    connection.login(user=MY_EMAIL, password=MY_PASSWORD)
     for celebrant in birthday_celebrant:
         connection.sendmail(to_addrs=celebrant['email'], from_addr=EMAIL,
                             msg=f'Subject: Happiest Birthday! {celebrant["name"]} \n\n '
