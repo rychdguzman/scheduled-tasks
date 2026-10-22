@@ -28,6 +28,6 @@ with smtplib.SMTP('smtp.gmail.com', 587) as connection:
     connection.starttls()
     connection.login(user=MY_EMAIL, password=MY_PASSWORD)
     for celebrant in birthday_celebrant:
-        connection.sendmail(to_addrs=celebrant['email'], from_addr=EMAIL,
+        connection.sendmail(to_addrs=celebrant['email'], from_addr=MY_EMAIL,
                             msg=f'Subject: Happiest Birthday! {celebrant["name"]} \n\n '
                                 f'{greeting_letter(celebrant['name'])}')
